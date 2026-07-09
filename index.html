@@ -1145,10 +1145,28 @@
           <p>Elke euro gaat rechtstreeks naar Samarita. Met ons doel van €&nbsp;50.000 financieren we de bouw van een gemeenschapsgebouw in Moldavië. Een plek waar mensen terechtkunnen voor medische zorg, voedsel, medicatie én ontmoeting.</p>
         </div>
 
-        <!-- Impact bullet -->
-        <div style="margin-top:32px; display:flex; align-items:flex-start; gap:14px;">
-          <span style="display:inline-block; width:4px; border-radius:2px; background:var(--green); flex-shrink:0; align-self:stretch;"></span>
-          <p style="font-size:15px; color:var(--ink); line-height:1.7; font-family:var(--font);">Met €&nbsp;50.000 financieren we de bouw van een gemeenschapsgebouw in Moldavië — een plek voor medische zorg, voedsel, medicatie én ontmoeting voor honderden mensen.</p>
+        <!-- Huis visual: groen = 1/8 van het gebouw = onze €50.000 -->
+        <div style="margin-top:32px; display:flex; gap:28px; align-items:flex-end; flex-wrap:wrap;">
+          <svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Huislichaam donker -->
+            <rect x="6" y="46" width="108" height="72" fill="#232b2f"/>
+            <!-- Groen = 1/8 van het lichaam (9px), onderaan -->
+            <rect x="6" y="109" width="108" height="9" fill="#04ba7e"/>
+            <!-- Schoorsteen -->
+            <rect x="18" y="8" width="15" height="32" fill="#232b2f"/>
+            <!-- Dak -->
+            <polygon points="60,2 118,48 2,48" fill="#232b2f"/>
+          </svg>
+          <div style="padding-bottom:8px; display:flex; flex-direction:column; gap:10px; max-width:200px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="display:inline-block; width:14px; height:14px; background:#04ba7e; border-radius:3px; flex-shrink:0;"></span>
+              <span style="font-size:13px; color:var(--ink); font-family:var(--font); font-weight:600;">€&nbsp;50.000 — onze bijdrage</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="display:inline-block; width:14px; height:14px; background:#232b2f; border-radius:3px; flex-shrink:0;"></span>
+              <span style="font-size:13px; color:var(--ink-muted); font-family:var(--font);">Totale bouw van het gebouw</span>
+            </div>
+          </div>
         </div>
       </div>
 
