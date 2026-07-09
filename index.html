@@ -1147,11 +1147,11 @@
 
         <!-- Huis visual -->
         <div style="margin-top:32px; display:flex; gap:28px; align-items:flex-end; flex-wrap:wrap;">
-          <svg id="houseSvg" width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Body donker (altijd volledig) -->
+          <svg width="120" height="130" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Donker deel (de rest van het gebouw) -->
             <rect x="6" y="46" width="108" height="72" fill="#232b2f"/>
-            <!-- Groene vulling van onderaf (groeit mee met opgehaald bedrag) -->
-            <rect id="houseGreen" x="6" y="118" width="108" height="0" fill="#04ba7e"/>
+            <!-- Groen deel: onze €50.000 bijdrage (vast, ~30% van de muur) -->
+            <rect x="6" y="96" width="108" height="22" fill="#04ba7e"/>
             <!-- Schoorsteen -->
             <rect x="18" y="8" width="15" height="32" fill="#232b2f"/>
             <!-- Dak (altijd bovenop) -->
@@ -1161,13 +1161,13 @@
           <div style="padding-bottom:8px; display:flex; flex-direction:column; gap:10px;">
             <div style="display:flex; align-items:center; gap:8px;">
               <span style="display:inline-block; width:14px; height:14px; background:#04ba7e; border-radius:3px; flex-shrink:0;"></span>
-              <span style="font-size:13px; color:var(--ink); font-family:var(--font); font-weight:600;">Opgehaald</span>
+              <span style="font-size:13px; color:var(--ink); font-family:var(--font); font-weight:600;">Onze bijdrage: €&nbsp;50.000</span>
             </div>
             <div style="display:flex; align-items:center; gap:8px;">
               <span style="display:inline-block; width:14px; height:14px; background:#232b2f; border-radius:3px; flex-shrink:0;"></span>
-              <span style="font-size:13px; color:var(--ink-muted); font-family:var(--font);">Doel: €&nbsp;50.000</span>
+              <span style="font-size:13px; color:var(--ink-muted); font-family:var(--font);">De rest van het gebouw</span>
             </div>
-            <p style="font-size:12px; color:var(--ink-muted); line-height:1.6; max-width:180px; margin-top:4px;">Het groene deel vult zich naarmate jullie doneren.</p>
+            <p style="font-size:12px; color:var(--ink-muted); line-height:1.6; max-width:180px; margin-top:4px;">Het groene deel is wat wij toevoegen aan het grotere geheel.</p>
           </div>
         </div>
       </div>
@@ -1830,15 +1830,6 @@
     // Kleine vertraging zodat de CSS-transitie zichtbaar is bij pagina-load
     setTimeout(function() {
       if (elBar) elBar.style.width = Math.max(pct, bedrag > 0 ? 1.5 : 0) + '%';
-      // Update huis-visualisatie: groene vulling groeit van onderaf omhoog
-      var houseGreen = document.getElementById('houseGreen');
-      if (houseGreen) {
-        var bodyH = 72; // hoogte huislichaam in SVG-eenheden
-        var fillH = Math.max((pct / 100) * bodyH, bedrag > 0 ? 2 : 0);
-        var fillY = 118 - fillH;
-        houseGreen.setAttribute('y', fillY);
-        houseGreen.setAttribute('height', fillH);
-      }
     }, 300);
   }
 
